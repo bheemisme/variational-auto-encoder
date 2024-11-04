@@ -1,0 +1,8 @@
+checkpoints
+results
+
+/**/*.jpg
+
+/**/__pycache__
+
+/**/*.pt
