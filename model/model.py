@@ -16,7 +16,7 @@ in_channels = 3
 vae = VAE(in_channels=in_channels, latent_dim=latent_dim)
 vae.load_state_dict(torch.load(model_path,
                                map_location=device,
-                               weights_only=True))
+                               weights_only=False))
 vae.to(device=device)
 vae.eval()
 
