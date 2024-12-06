@@ -3,7 +3,7 @@ from compression import compression
 from decompression import decompression
 import matplotlib.pyplot as plt
 import pandas as pd
-
+import os
 def get_graph():
     # Read the CSV file
     results_df = pd.read_csv(f"results/results_train_11.csv")
@@ -31,5 +31,8 @@ def app():
     compression()
     decompression()
 
+os.makedirs('images', exist_ok=True)
+os.makedirs('temp', exist_ok=True)
+os.makedirs('out-images', exist_ok=True)
 
 app()

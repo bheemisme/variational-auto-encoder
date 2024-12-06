@@ -1,5 +1,6 @@
 import streamlit as st
-
+import os
+import pathlib
 from pathlib import Path
 from model.model import compress, preprocess_image
 from PIL import Image
@@ -13,7 +14,8 @@ def compression():
     if uploaded_file:
 
         if uploaded_file.type == "image/jpeg" or uploaded_file.type == "image/png":
-            input_image_path = input_images_dir / uploaded_file.name
+            input_image_path = pathlib.Path(input_images_dir / uploaded_file.name)
+            input_image_path.touch()
             with open(input_image_path, "wb") as input_file:
                 input_file.write(uploaded_file.read())
             
