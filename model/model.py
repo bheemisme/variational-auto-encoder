@@ -2,19 +2,19 @@ from pathlib import Path
 import torch
 import torchvision.io as io
 import torchvision.transforms as T
-
+import model.download as dd
 from model.VAE import VAE
 
 # defining hyper-parameters
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model_path = './checkpoints/vae_model_train_27_epoch_100.pth'
+# model_path = './checkpoints/vae_model_train_27_epoch_100.pth'
 latent_dim=16
 in_channels = 3
 
 
 # loading the model
 vae = VAE(in_channels=in_channels, latent_dim=latent_dim)
-vae.load_state_dict(torch.load(model_path,
+vae.load_state_dict(torch.load(dd.model_path,
                                map_location=device,
                                weights_only=False))
 vae.to(device=device)

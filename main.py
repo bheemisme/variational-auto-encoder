@@ -24,9 +24,8 @@ def get_graph():
 
 def app():
     st.title("Neural Lossy Compression")
-    df = pd.read_csv('./results/results_train_20.csv')
-    fig = get_graph()
-    st.pyplot(fig)
+    # fig = get_graph()
+    # st.pyplot(fig)
     
     
     compression()

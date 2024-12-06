@@ -9,4 +9,3 @@ Inspired from paper [An Introduction to Variational Auto Encoders](https://arxiv
 - [Dataset](https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small)
 
 ![streamlit-ui](./application.png)
-
